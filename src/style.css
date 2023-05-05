@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+
+};
+
+@layer components {
+    .btn-index-atividades {
+        @apply h-40 xl:h-[250px] shadow-xl inline-flex md:inline-block justify-start md:justify-center
+        items-center
+    };
+
+    .btn-index-transicao-atividades {
+        @apply bg-white rounded-full text-primary-600 shadow-lg
+    };
+
+    .text-principal-index {
+        @apply flex justify-center text-white font-bold lg:text-center mx-1 lg:mx-10 lg:mt-10 uppercase
+    };
+
+    .btn-navbar-transicao {
+        @apply bg-gradient-to-r from-primary-500 to-primary-600 bg-no-repeat [background-position:0_100%] [background-size:100%_0.01em] 
+        motion-safe:transition-all motion-safe:duration-500 hover:[background-size:100%_100%] focus:[background-size:100%_100%] 
+        rounded-full text-white shadow-2xl border-2 border-white
+    };
+
+    .btn-options-transicao {
+        @apply bg-gradient-to-r from-primary-500 to-primary-900 bg-no-repeat [background-position:0_100%] [background-size:100%_0.01em] 
+        motion-safe:transition-all motion-safe:duration-500 hover:[background-size:100%_100%] focus:[background-size:100%_100%] 
+        rounded-full shadow-2xl border-2 border-white text-primary-600 hover:text-white
+    };
+
+    .tamanhos {
+        @apply mx-4 md:mx-14 xl:mx-28 2xl:mx-40 3xl:mx-64
+    };
+
+    .tabela-campos {
+        @apply bg-primary-500 hover:bg-primary-300 font-bold bg-opacity-80 w-44 md:w-60 lg:w-80 text-center text-white rounded-lg  flex justify-center py-2 text-sm md:text-base items-center
+    }
+
+    .tabela-dados {
+        @apply bg-neutral-200 hover:bg-neutral-300 text-sm md:text-base w-[190px] md:w-[440px] lg:w-[500px] text-center md:text-start text-gray-600 rounded-lg  justify-center md:justify-start py-2 pl-3 items-center flex
+    }
+
+    .navbar-menu-mobile {
+        @apply flex flex-col lg:flex-row absolute lg:static mt-20 lg:mt-0 w-full lg:w-auto  z-30 items-center
+         lg:space-x-7 bg-white lg:bg-transparent text-center  space-y-6 p-4 lg:p-0 lg:space-y-0 shadow-xl lg:shadow-none
+    };
+
+    .navbar-opcao {
+        @apply lg:bg-primary-500 w-60 xl:w-48 h-6 lg:h-11 rounded-full lg:btn-navbar-transicao text-gray-500
+    }
+
+    
+    .banner {
+        @apply absolute w-full object-cover object-bottom mix-blend-normal brightness-[0.5] z-0
+    }
+
+    .barra-pesquisar {
+        @apply w-[340px] md:w-[600px] lg:w-[850px] p-2.5 -mt-1 bg-white bg-opacity-25 border-b-4 border-white z-10 rounded-l-md focus:ring-2 focus:ring-primary-600
+    }
+
+    .banner-option {
+        @apply btn-index-atividades cursor-pointer h-32 md:h-56 drop-shadow-[0_15px_15px_rgba(0,0,0,0.15)] md:drop-shadow-none
+    }
+
+    .botao-background {
+        @apply bg-white rounded-full items-center flex mx-auto justify-center h-24 w-24  shadow-2xl btn-options-transicao 
+    }
+
+    .grid-index {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:mx-[110px] 2xl:mx-[200px] 3xl:mx-[350px] mt-0 md:mt-60 xl:mt-64 
+    }
+
+    .grid-index2 {
+        @apply grid lg:grid-cols-2 tamanhos gap-5 lg:gap-10 overflow-hidden
+    }
+
+    .nome-entidade { 
+        @apply text-white text-lg lg:text-xl 2xl:text-2xl w-full flex justify-center lg:justify-start ml-3 lg:ml-5 text-start
+    }
+
+    .imagem-sessao-index {
+        @apply h-[1750px] md:h-[1000px] absolute w-full object-cover object-top mix-blend-overlay
+    }
+
+    .detalhe-titulo-sessao-index {
+        @apply bg-white w-full h-0.5 rounded-full shadow-xl
+    }
+
+    .titulo-sessao-index {
+        @apply font-medium text-center border-2 border-white rounded-full p-2 bg-gray-100 bg-opacity-30 text-white text-xl lg:text-3xl
+    }
+
+    .sessao-index {
+        @apply relative drop-shadow-[0_15px_15px_rgba(0,0,0,0.25)] z-20 pb-12 overflow-hidden
+    }
+
+    .efeito-aumentar {
+        @apply lg:hover:scale-110 lg:transition lg:duration-150 lg:ease-in-out
+    }
+
+    .card-parte-superior {
+        @apply relative bg-primary-600 h-[300px] w-[280px] xl:w-[250px] 2xl:w-[280px] rounded-2xl mx-auto
+    }
+
+    .card-parte-inferior {
+        @apply absolute bg-neutral-100 h-[300px] w-[280px] xl:w-[250px] 2xl:w-[280px] rounded-2xl mt-10 border-2 border-neutral-300
+    }
+
+    .sessao-index-tamanho {
+        @apply flex-col flex md:grid md:grid-cols-2 lg:grid-cols-4 tamanhos pb-16 pt-5 gap-y-16 2xl:gap-y-24 gap-x-5 2xl:gap-x-16
+    }
+
+    .btn-header {
+        @apply inline-block relative cursor-pointer transition-all duration-75 before:content-[''] before:absolute before:-bottom-1 
+        before:left-1/2 before:-translate-x-1/2 before:w-0 before:h-0.5 before:rounded-full before:opacity-0 before:transition-all 
+        before:duration-300 before:bg-gradient-to-r before:from-white before:to-white hover:before:w-full hover:before:opacity-100
+    }
+
+    .header {
+        @apply z-30 bg-black bg-opacity-40 text-white text-xs uppercase 
+    }
+
+   
+      .box {
+        @apply flex items-center lg:flex-col w-full h-[180px] lg:h-[230px] relative transition-all duration-[0.3s] ease-[ease-out] hover:bg-primary-900 lg:hover:h-[280px] lg:hover:rounded-xl lg:hover:-mt-6;
+      }
+      .content {
+        @apply absolute bottom-[-10px] w-full h-[70px] text-center opacity-0 transition-all duration-[0.3s] ease-[ease-out];
+      }
+      .content p {
+        @apply m-0 pt-2.5;
+      }
+      .arrow {
+        @apply absolute ml-[-5px] w-0 h-0 transition-all duration-[0.3s] ease-[ease-out] border-t-[5px] border-t-white border-x-[5px] border-x-transparent border-solid left-2/4 -bottom-2.5;
+      }
+      .box:hover .content {
+        @apply opacity-100 bottom-0;
+      }
+      .box:hover .arrow {
+        @apply border-t-0 border-b-[5px] border-b-white border-solid bottom-2.5;
+      }
+    
+      .effect-zoom {
+        @apply lg:hover:scale-105 lg:transition lg:duration-150 lg:ease-in-out
+    }
+
+    .effect-underline {
+        @apply 
+                          inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-100
+                          before:content-['']
+                          before:absolute
+                          before:-bottom-3
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-1.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-300
+                          before:bg-gradient-to-r
+                          before:from-primary-100
+                          before:to-primary-100
+                          hover:before:w-full
+                          hover:before:opacity-100
+    };
+    .input-estilo {
+        @apply  text-white text-base  border-b-4 border-b-white border-[none] border-solid;
+      }
+      .input-estilo::placeholder {
+        @apply text-white;
+      }
+
+    .btn-transparencia {
+        @apply bg-white shadow-md rounded-lg p-6 effect-zoom lg:h-60 
+    }
+    
+    .btn-transparencia2 {
+        @apply border-2 bg-white bg-opacity-25 border-white shadow-md rounded-lg p-6 effect-zoom lg:h-60 
+    }
+    
+}

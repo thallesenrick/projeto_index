@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/outputt.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="/src/resources/default_css.css">
+    <link rel="stylesheet" href="/fontawesome-pro-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+         .btn {
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        margin-right: -15px;
+        vertical-align: middle;
+        text-decoration: none;
+        -webkit-transition: width 0.1s;
+        transition: width 0.1s;
+        z-index: 40;
+    }
+
+    .btn .btn-text {
+        max-width: 0;
+        display: inline-block;
+        -webkit-transition: color .10s 1.5s, max-width 2s;
+        transition: color .10s 1.5s, max-width 2s;
+        vertical-align: tmiddle;
+        white-space: nowrap;
+        overflow: hidden;
+
+    }
+
+    .btn:hover .btn-text {
+        max-width: 300px;
+    }
+    </style>
+</head>
+<body class="font-montserrat relative">
+    <div class="z-10 md:flex flex-row md:flex-col gap-y-5 gap-x-5 hidden -right-0.5 top-44 ml-14 fixed">
+        <div class="grid grid-cols-1">
+            <a href="https://www.facebook.com/" target="_blank">
+                <div class="flex justify-end z-50" onclick="openForm()">
+                    <button class=" btn bg-white shadow-xl">
+                        <span class="btn-icon"><i class="fa-brands fa-facebook-f fa-2x px-5 py-3 bg-secundary text-white"></i></span>
+                        <span class="btn-text mr-3 w-40 text-secundary">Facebook</span>
+                    </button>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank">
+                <div class="flex justify-end z-50" onclick="openForm()">
+                    <button class=" btn bg-white shadow-xl">
+                        <span class="btn-icon"><i class="fa-brands fa-youtube fa-2x px-3 py-3 bg-secundary text-white"></i></span>
+                        <span class="btn-text mr-3 w-40 text-secundary">Youtube</span>
+                    </button>
+                    </div>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <div class="flex justify-end z-50" onclick="openForm()">
+                    <button class=" btn bg-white shadow-xl">
+                        <span class="btn-icon"><i class="fa-brands fa-instagram fa-2x px-4 py-3 bg-secundary text-white"></i></span>
+                        <span class="btn-text mr-3 w-40 text-secundary">Instagram</span>
+                    </button>
+                    </div>   
+            </a>
+            <a href="https://accounts.google.com/" target="_blank">
+                <div class="flex justify-end z-50" onclick="openForm()">
+                    <button class=" btn bg-white shadow-xl">
+                        <span class="btn-icon"><i class="fa-solid fa-envelope fa-2x px-3.5 py-3 bg-secundary text-white"></i></span>
+                        <span class="btn-text mr-3 w-40 text-secundary">E-mail</span>
+                    </button>
+                </div>     
+            </a>
+            </div>
+    </div>
+    <!--beggin: Header-->
+    <header class="absolute header w-full ">
+        <div class="flex flex-wrap justify-center lg:justify-between tamanhos gap-y-4 py-3">
+            <ul class="flex flex-wrap justify-center">
+                <li class="pr-4 border-r ">
+                    <a href="../pages/transparencia/lai/lai_opcoes.html" class="btn-header">
+                        <i class="fa-solid fa-circle-info mr-2 "></i> Lei de acesso a informação
+                    </a>
+                </li>
+                <li class="px-4 border-r md:mt-0">
+                    <a href="mapa_do_site/mapa_do_site.html" class="btn-header">
+                        <i class="fa-duotone fa-sitemap mr-2"></i>Mapa do Site
+                    </a>
+                </li>
+                <li class="px-4 mt-4 md:mt-0">
+                    <a href="acessibilidade/acessibilidade.html" class="btn-header">
+                        <i class="fa-solid fa-hand-holding-hand mr-2"></i> Acessibilidade
+                    </a>
+                </li>
+            </ul>
+            <ul class="flex space-x-6">
+                <li>
+                    <a href="https://www.vlibras.gov.br/" target="_blank" class="btn-header">
+                        <i class="fa-solid fa-hand-paper"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn-header">
+                        A
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="FontSize('decrease')" class="cursor-zoom-out btn-header">
+                        A-
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="FontSize('increase')" class="cursor-zoom-in btn-header">
+                        A+
+                    </a>
+                </li>
+                <li class="btn-header">
+                    <i class="fa-duotone fa-adjust "></i>
+                </li>
+                <li>
+                    <a href="#" id="area-adm" class="btn-header">
+                        ADMINISTRATIVO
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!--end: Header-->
+    <!--beggin: Banner-->
+        <div>
+            <!-- <video src="img/video_cidade.mp4" autoplay loop muted  class="absolute z-0 mix-blend-overlay h-[750px] w-full object-cover"></video> -->
+            <img src="/src/img/PIQUET_CARNEIRO.jpg.4954x1643_q85_box-0,0,4929,1643_crop_detail.jpg" class="h-[810px] lg:h-[750px] banner">
+            <!--beggin: Options Superior-->
+                <nav class="tamanhos flex flex-row justify-between pt-32 md:pt-20 lg:pt-12">
+                    <!--beggin: First Options-->
+                        <div class="flex items-center text-white  lg:mx-0 z-10 w-full">
+                            <a class="h-20 flex items-center justify-between ">
+                                <a href="index.html">
+                                    <img src="img/camarapiquetcarneiro_ce.png" width="90">
+                                </a>
+                                <a href="index.html" class="nome-entidade">
+                                    CÂMARA MUNICIPAL DE PIQUET CARNEIRO
+                                </a>
+                                <div class="lg:hidden -mr-4 flex">
+                                    <button id="nav-toggle" class="flex items-center mx-4 shadow-xl rounded-full px-3.5 py-3 bg-primary-500">
+                                        <i class="text-2xl text-brand-200 fad fa-bars"></i>
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    <!--end: First Options-->
+                    <!--beggin: Second Options-->
+                        <ul class="list-reset text-white navbar-menu-mobile hidden lg:flex -ml-4 md:-ml-14 lg:space-x-12 gap-y-3" id="nav-content">
+                            <p>INSTITUCIONAL</p>
+                            <p>PARLAMENTARES</p>
+                            <p>ATIVIDADES</p>
+                            <p>TRANSPARÊNCIA</p>
+                        </ul>
+                    <!--end: Second Options-->
+                </nav>
+            <!--end: Options Superior-->
+            <!--beggin: Busca-->
+                <div class="grid grid-rows-2 md:justify-center mt-20 lg:mt-40 mb-40 ">
+                    <p class="text-xl text-white z-10 ml-24 md:flex md:justify-center md:ml-0 lg:ml-0 lg:justify-start ">Do que você precisa?</p>
+                    <div class="flex">
+                        <div class="flex flex-row ml-3 lg:ml-0">
+                            <input type="text" placeholder="Ex.: serviços, agenda, RGF" class="barra-pesquisar input-estilo text-white">
+                        </div>
+                        <div class="bg-white -mt-1 flex items-center px-4 rounded-r-md z-10">
+                            <i class="fa fa-search text-primary-600"></i>
+                        </div>
+                    </div>
+                </div>
+            <!--end: Busca-->
+            <!--beggin: Options Inferior-->
+            <div class="grid-index ">
+                <div class="box bg-primary-200 lg:rounded-l-2xl" >
+                    <div class="justify-center ml-6 lg:mt-7 mr-6 xl:mr-0 xl:ml-0 xl:mt-5">
+                        <a href="consultas_publicas.html"> 
+                            <button class="botao-background px-6 py-5">
+                                <i class="fa-duotone fa-user-headset fa-3x"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <p class="text-principal-index lg:mt-10">
+                        Ouvidoria
+                        <div class="content hidden lg:block">
+                            <div class="flex justify-center">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
+                                    <i class="fa-solid fa-chevron-right text-primary-600 "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="box bg-primary-500">
+                    <div class="justify-center ml-6 lg:mt-7 mr-6 xl:mr-0 xl:ml-0 xl:mt-5">
+                        <a href="consultas_publicas.html"> 
+                            <button class="botao-background px-5 py-5">
+                                <i class="fa-duotone fa-message-exclamation fa-3x"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <p class="text-principal-index lg:mt-10">
+                        E-SIC
+                        <div class="content">
+                            <div class="flex justify-center">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
+                                    <i class="fa-solid fa-chevron-right text-primary-600 "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="box bg-primary-600">
+                    <div class="justify-center ml-6 lg:mt-7 mr-6 xl:mr-0 xl:ml-0 xl:mt-5">
+                        <a href="consultas_publicas.html"> 
+                            <button class="botao-background px-4 py-5">
+                                <i class="fa-duotone fa-memo-circle-info fa-3x"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <p class="text-principal-index lg:mt-10">
+                        Acesso a Informação
+                        <div class="content">
+                            <div class="flex justify-center">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
+                                    <i class="fa-solid fa-chevron-right text-primary-600 "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="box bg-primary-900 lg:rounded-r-2xl">
+                    <div class="justify-center ml-6 lg:mt-7 mr-6 xl:mr-0 xl:ml-0 xl:mt-5">
+                        <a href="consultas_publicas.html"> 
+                            <button class="botao-background px-6 py-5">
+                                <i class="fa-duotone fa-user-tie fa-3x"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <p class="text-principal-index lg:mt-8">
+                        Fale com o Parlamentar
+                        <div class="content">
+                            <div class="flex justify-center">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
+                                    <i class="fa-solid fa-chevron-right text-primary-600 "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+             
+              </div>
+
+            <!--end: Options Inferior-->
+        </div>
+    <!--end: Banner-->
+        <div class="relative bg-gradient-to-r from-primary-500 via-primary-600 to-primary-900 h-[1000px] lg:h-[600px] w-full mt-20 lg:mt-40 shadow-2xl ">
+            <img src="img/Curve Line (4).png" class="absolute right-0 bottom-0 opacity-10 h-[670px] lg:h-[750px] w-full object-cover" alt=""> 
+            <div class="flex items-center absolute top-20 tamanhos">
+                <div class="bg-white h-48 lg:h-36 w-2.5 lg:w-1.5 rounded-full"></div>
+                <div class="ml-10">
+                    <p class="text-white text-lg lg:text-xl font-black">ACOMPANHE A SESSÃO PLENÁRIA </p>
+                    <p class="mt-10 text-white text-base lg:text-lg font-light">Acompanhe em tempo real vídeo e painel digital da 4ª Sessão Ordinária do 1º Período da 3ª 
+                        Sessão Legislativa da 2ª Legislatura da CÂMARA MUNICIPAL DE TIANGUÁ</p>
+                </div> 
+            </div>
+            <div class="lg:flex items-center absolute top-[330px] lg:top-72 tamanhos">
+                <div class="flex justify-center">
+                    <div class="rounded-full bg-secundary px-5 py-1 w-40 text-white flex items-center justify-center border-[2px] border-white animate-pulse">
+                        <i class="fa-duotone fa-signal-stream mr-2"></i>
+                        AO VIVO
+                    </div>
+                </div>
+                <p class=" text-white text-lg ml-4 mt-8 lg:mt-0">4ª Sessão Ordinária do 1º Período da 3ª Sessão Legislativa da 2ª Legislatura</p>
+            </div>
+          
+            <div class="grid-index2 pt-[510px] lg:pt-96">
+                <video src="img/video_cidade.mp4" autoplay loop muted class="z-30 h-[300px] lg:h-[400px] w-full object-cover rounded-md shadow-xl"></video>
+                <img src="img/Captura de tela de 2023-05-03 15-36-20.png" class="z-30 h-[300px] lg:h-[400px] w-full object-cover rounded-md shadow-xl" alt="">
+            </div>
+        </div>
+        <div class="flex items-center tamanhos mt-[200px] lg:mt-[250px] mb-16">
+            <div class="w-1.5 h-10 bg-secundary"></div>
+            <p class="ml-5 text-lg lg:text-xl font-black text-secundary">COMPONENTES DA MESA DIRETORA</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 tamanhos gap-4">
+            <div class="relative flex items-center shadow-xl p-5 rounded-xl hover:bg-primary-100">
+                <div class="z-10">
+                    <div class="w-24 h-24 -mb-2 bg-primary-200 rounded-full"></div>   
+                    <img src="img/person1.jpg" class="absolute bottom-5 w-24 h-24 object-cover object-center rounded-full" alt="">
+                </div>
+                <div class="ml-10 space-y-3">
+                    <div class="bg-primary-600 w-max px-5 py-1 rounded-full shadow-xl">
+                        <p class="font-black text-xs text-white">PRESIDENTE</p>
+                    </div>
+                    <p class="text-graylight text-sm">EDCARLOS VITURIANO ANDRADE</p>
+                </div>
+            </div>
+            <div class="relative flex items-center shadow-xl p-5 rounded-xl hover:bg-primary-100">
+                <div class="z-10">
+                    <div class="w-24 h-24 -mb-2 bg-primary-200 rounded-full"></div>   
+                    <img src="img/person2.jpg" class="absolute bottom-5 w-24 h-24 object-cover object-center rounded-full" alt="">
+                </div>
+                <div class="ml-10 space-y-3">
+                    <div class="bg-primary-600 w-max px-5 py-1 rounded-full shadow-xl">
+                        <p class="font-black text-xs text-white">VICE-PRESIDENTE</p>
+                    </div>
+                    <p class="text-graylight text-sm">THIAGO BATISTA DE CARVALHO</p>
+                </div>
+            </div>
+            <div class="relative flex items-center shadow-xl p-5 rounded-xl hover:bg-primary-100">
+                <div class="z-10">
+                    <div class="w-24 h-24 -mb-2 bg-primary-200 rounded-full"></div>   
+                    <img src="img/person3.jpg" class="absolute bottom-5 w-24 h-24 object-cover object-center rounded-full" alt="">
+                </div>
+                <div class="ml-10 space-y-3">
+                    <div class="bg-primary-600 w-max px-5 py-1 rounded-full shadow-xl">
+                        <p class="font-black text-xs text-white">PRIMEIRO-SECRETÁRIO</p>
+                    </div>
+                    <p class="text-graylight text-sm">FRANCISCO VALDENOR SOBRINHO</p>
+                </div>
+            </div>
+            <div class="relative flex items-center shadow-xl p-5 rounded-xl hover:bg-primary-100">
+                <div class="z-10">
+                    <div class="w-24 h-24 -mb-2 bg-primary-200 rounded-full"></div>   
+                    <img src="img/person4.jpg" class="absolute bottom-5 w-24 h-24 object-cover object-center rounded-full" alt="">
+                </div>
+                <div class="ml-10 space-y-3">
+                    <div class="bg-primary-600 w-max px-5 py-1 rounded-full shadow-xl">
+                        <p class="font-black text-xs text-white">SEGUNDO-SECRETÁRIO</p>
+                    </div>
+                    <p class="text-graylight text-sm">FRANCISCO ALEXSANDRE PINHEIRO CARNAUBA</p>
+                </div>
+            </div>
+         
+
+        </div>
+        <div class="flex items-center tamanhos mt-28 mb-16">
+            <div class="w-1.5 h-10 bg-secundary"></div>
+            <p class="ml-5 text-lg lg:text-xl font-black text-secundary">ACOMPANHE AS ULTIMAS NOTÍCIAS</p>
+        </div>
+
+        <div class="tamanhos">
+            <div id="owl-carousel-fique-informado" class="owl-carousel owl-carousel1 owl-theme shadow-xl">
+                <div class="item lg:grid grid-cols-3 rounded-xl shadow-xl overflow-hidden">
+                    <div class="md:col-span-2 overflow-hidden relative">
+                        <img src="img/carousel1.png" class="object-cover" alt="" style="height: 500px;">
+                        <div class="absolute top-52 w-full">
+                            <div class="flex justify-between items-center overflow-hidden">
+                                <div class="pl-4 text-white text-opacity-60 hover:text-white">
+                                    <button onclick="let owlPrev = $('#owl-carousel-fique-informado');
+                                        owlPrev.trigger('prev.owl.carousel');">
+                                        <i class="fa-solid fa-angle-left fa-4x"></i>
+                                    </button>
+                                </div>
+                                <div class="pr-4 text-white text-opacity-60 hover:text-white">
+                                    <button onclick="let owlNext = $('#owl-carousel-fique-informado');
+                                        owlNext.trigger('next.owl.carousel');">
+                                        <i class="fa-solid fa-angle-right fa-4x"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-span-1 bg-white m-6 2xl:m-10 h-[450px] md:h-[340px]">
+                        <div class="flex  my-2 text-sm justify-between md:justify-start lg:justify-between md:space-x-5">
+                            <div class="flex items-center gap-x-3">
+                                <i class="fad fa-calendar text-primary-600"></i>
+                                <p class="text-graylight text-sm">18/05/2021</p>
+                            </div>
+                            <div class="flex my-auto xl:justify-start items-center 2xl:ml-8">
+                              <i class="fa-duotone fa-eye text-primary-600"></i>
+                              <p class="ml-1 md:mt-0 xl:mt-0 xl:ml-1 font-light text-graylight">100 Visualizações</p>
+                            </div>
+                        </div>
+                        <p class="text-xl mt-5 lg:mt-8 font-semibold text-graylight h-32 lg:h-20 items-center flex">
+                            Manual aborda o papel das Entidades de Fiscalização no fortalecimento da credibilidade orçamentária
+                        </p>
+                        <p class="w-40 h-1.5 bg-primary-600 z-10 mt-5 md:mt-0 lg:mt-5"></p>
+                        <div class="mt-5 h-40 md:h-24 lg:h-40 items-center flex overflow-hidden">
+                            <p class="font-light text-graylight leading-loose text-sm">
+                                O TCU promoveu workshop de apresentação da minuta do handbook sobre a atuação das Entidades de Fiscalização Superiores no fortalecimento da credibilidade orçamentária dos países. O material deve ser lançado oficialmente no início de 2023 ...
+                            </p>
+                        </div>
+                        <div class="flex justify-end effect-zoom">   
+                            <a href="noticias_interno.html">
+                                <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mt-8 mb-2 effect-zoom">
+                                    <p class="text-white text-sm">SAIBA MAIS</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item lg:grid grid-cols-3 rounded-xl shadow-xl overflow-hidden">
+                    <div class="md:col-span-2 overflow-hidden relative">
+                        <img src="img/carrousel2.jpg" class="object-cover" alt="" style="height: 500px;">
+                        <div class="absolute top-52 w-full">
+                            <div class="flex justify-between items-center overflow-hidden">
+                                <div class="pl-4 text-white text-opacity-60 hover:text-white">
+                                    <button onclick="let owlPrev = $('#owl-carousel-fique-informado');
+                                        owlPrev.trigger('prev.owl.carousel');">
+                                        <i class="fa-solid fa-angle-left fa-4x"></i>
+                                    </button>
+                                </div>
+                                <div class="pr-4 text-white text-opacity-60 hover:text-white">
+                                    <button onclick="let owlNext = $('#owl-carousel-fique-informado');
+                                        owlNext.trigger('next.owl.carousel');">
+                                        <i class="fa-solid fa-angle-right fa-4x"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-span-1 bg-white m-6 2xl:m-10 h-[450px] md:h-[340px]">
+                        <div class="flex  my-2 text-sm justify-between md:justify-start lg:justify-between md:space-x-5">
+                            <div class="flex items-center gap-x-3">
+                                <i class="fad fa-calendar text-primary-600"></i>
+                                <p class="text-graylight text-sm">18/05/2021</p>
+                            </div>
+                            <div class="flex my-auto xl:justify-start items-center 2xl:ml-8">
+                              <i class="fa-duotone fa-eye text-primary-600"></i>
+                              <p class="ml-1 md:mt-0 xl:mt-0 xl:ml-1 font-light text-graylight">100 Visualizações</p>
+                            </div>
+                        </div>
+                        <p class="text-xl mt-5 lg:mt-8 font-semibold text-graylight h-32 lg:h-20 items-center flex">
+                            Confira algumas orientações para o uso do Cartão PDDE
+                        </p>
+                        <p class="w-40 h-1.5 bg-primary-600 z-10 mt-5 md:mt-0 lg:mt-8"></p>
+                        <div class="mt-5 h-40 md:h-24 lg:h-40 items-center flex overflow-hidden">
+                            <p class="font-light text-graylight leading-loose text-sm">
+                                Márcio Atalla diz que depende muito. Para ele, se é preciso escolher entre dormir e fazer exercício, 'é melhor dormir' já que 'dormir é o alicerce do estilo de vida'. Mas, destaca o comentarista, se é algo pontual, tudo bem fazer uma atividade física.
+                            </p>
+                        </div>
+                        <div class="flex justify-end effect-zoom">   
+                            <a href="noticias_interno.html">
+                                <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mt-8 mb-2 effect-zoom">
+                                    <p class="text-white text-sm">SAIBA MAIS</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 tamanhos gap-10 text-graylight">
+            <div class="shadow-lg effect-zoom rounded-lg overflow-hidden">
+                <img src="img/noticia1.jpg" class="w-full h-52 object-cover shadow-lg" alt="">
+                <div class="p-5">
+                    <div class="flex  my-2 text-sm justify-between md:justify-start lg:justify-between md:space-x-5">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fad fa-calendar text-primary-600"></i>
+                            <p class="text-graylight text-sm">18/05/2021</p>
+                        </div>
+                        <div class="flex my-auto xl:justify-start items-center 2xl:ml-8">
+                          <i class="fa-duotone fa-eye text-primary-600"></i>
+                          <p class="ml-1 md:mt-0 xl:mt-0 xl:ml-1 font-light text-graylight">100</p>
+                        </div>
+                    </div>
+                    <p class="font-semibold text-graylight h-24 flex items-center mt-5">
+                        CE aprova inclusão da educação física na LDB
+                    </p>
+                    <p class="text-sm mt-5 leading-relaxed">
+                        A Comissão de Educação aprovou, nesta quinta-feira (10), o PL 3467/2019, que inclui na Lei de Diretrizes ...
+                    </p>
+                    <div class="flex justify-end effect-zoom">   
+                        <a href="noticias_interno.html">
+                            <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mt-8 mb-2 effect-zoom">
+                                <p class="text-white text-sm">SAIBA MAIS</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-lg effect-zoom rounded-lg overflow-hidden">
+                <img src="img/noticia2.jpg" class="w-full h-52 object-cover shadow-lg" alt="">
+                <div class="p-5">
+                    <div class="flex  my-2 text-sm justify-between md:justify-start lg:justify-between md:space-x-5">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fad fa-calendar text-primary-600"></i>
+                            <p class="text-graylight text-sm">18/05/2021</p>
+                        </div>
+                        <div class="flex my-auto xl:justify-start items-center 2xl:ml-8">
+                          <i class="fa-duotone fa-eye text-primary-600"></i>
+                          <p class="ml-1 md:mt-0 xl:mt-0 xl:ml-1 font-light text-graylight">100</p>
+                        </div>
+                    </div>
+                    <p class="font-semibold text-graylight h-24 flex items-center mt-5">TCE CEARÁ ABRE INSCRIÇÕES PARA O PROCESSO SELETIVO DE ESTAGIÁRIOS DE PÓS-GRADUAÇÃO</p>
+                    <p class="text-sm mt-5 leading-relaxed">
+                        O Tribunal de Contas do Estado do Ceará lança o 1º Processo Seletivo de Estagiários de Pós-Graduação ...
+                    </p>
+                    <div class="flex justify-end effect-zoom">   
+                        <a href="noticias_interno.html">
+                            <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mt-8 mb-2 effect-zoom">
+                                <p class="text-white text-sm">SAIBA MAIS</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-lg effect-zoom rounded-lg overflow-hidden">
+                <img src="img/sessao_default.jpeg" class="w-full h-52 object-cover shadow-lg" alt="">
+                <div class="p-5">
+                    <div class="flex  my-2 text-sm justify-between md:justify-start lg:justify-between md:space-x-5">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fad fa-calendar text-primary-600"></i>
+                            <p class="text-graylight text-sm">18/05/2021</p>
+                        </div>
+                        <div class="flex my-auto xl:justify-start items-center 2xl:ml-8">
+                          <i class="fa-duotone fa-eye text-primary-600"></i>
+                          <p class="ml-1 md:mt-0 xl:mt-0 xl:ml-1 font-light text-graylight">100</p>
+                        </div>
+                    </div>
+                    <p class="font-semibold text-graylight h-24 flex items-center mt-5">307ª SESSÃO ORDINÁRIA DA 1ª SESSÃO LEGISLATIVA DA 1ª LEGISLATURA</p>
+                    <p class="text-sm mt-5 leading-relaxed">
+                        Acompanhe o resumo da 307ª Sessão Ordinária da 1ª Sessão Legislativa da 1ª Legislatura ...
+                    </p>
+                    <div class="flex justify-end effect-zoom">   
+                        <a href="noticias_interno.html">
+                            <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mt-8 mb-2 effect-zoom">
+                                <p class="text-white text-sm">SAIBA MAIS</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-lg effect-zoom rounded-lg overflow-hidden">
+                <img src="img/sessao_default.jpeg" class="w-full h-52 object-cover shadow-lg" alt="">
+                <div class="p-5">
+                    <div class="flex  my-2 text-sm justify-between md:justify-start lg:justify-between md:space-x-5">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fad fa-calendar text-primary-600"></i>
+                            <p class="text-graylight text-sm">18/05/2021</p>
+                        </div>
+                        <div class="flex my-auto xl:justify-start items-center 2xl:ml-8">
+                          <i class="fa-duotone fa-eye text-primary-600"></i>
+                          <p class="ml-1 md:mt-0 xl:mt-0 xl:ml-1 font-light text-graylight">100</p>
+                        </div>
+                    </div>
+                    <p class="font-semibold text-graylight h-24 flex items-center mt-5">307ª SESSÃO ORDINÁRIA DA 1ª SESSÃO LEGISLATIVA DA 1ª LEGISLATURA</p>
+                    <p class="text-sm mt-5 leading-relaxed">
+                        Acompanhe o resumo da 307ª Sessão Ordinária da 1ª Sessão Legislativa da 1ª Legislatura ...
+                    </p>
+                    <div class="flex justify-end effect-zoom">   
+                        <a href="noticias_interno.html">
+                            <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mt-8 mb-2 effect-zoom">
+                                <p class="text-white text-sm">SAIBA MAIS</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-end tamanhos">   
+            <a href="noticias_interno.html">
+                <div class="bg-primary-600 w-72 rounded-md flex items-center py-2 justify-center mt-12 mb-20 effect-zoom">
+                    <i class="fa-duotone fa-right-from-bracket text-xl mr-3 text-white"></i>
+                    <p class="text-white">VEJA TODAS AS NOTÍCIAS</p>
+                </div>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 tamanhos gap-20 mt-10">
+            <div class="lg:col-span-2">
+                <div class="flex items-center">
+                    <div class="w-1.5 h-10 bg-secundary"></div>
+                    <p class="ml-5 text-xl font-black text-secundary"> ÚLTIMAS PROPOSIÇÕES</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20">
+                    <div class="relative flex items-center shadow-xl p-5 rounded-xl effect-zoom hover:bg-primary-100">
+                        <div>
+                            <div class="flex justify-between">
+                                <p class="font-black text-graylight text-sm ">REQ Nº 10/2023</p>
+                                <div class="flex items-center gap-x-3">
+                                    <i class="fad fa-calendar text-primary-600"></i>
+                                    <p class="text-graylight text-sm">18/05/2021</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center mt-5">
+                                <div>
+                                    <div class="w-24 h-24 bg-primary-200 rounded-full mt-4"></div>   
+                                    <img src="img/person4.jpg" class="absolute bottom-[70px] w-24 h-24 object-cover object-center rounded-full" alt="">
+                                </div>
+                                <p class=" text-graylight ml-5 text-sm">
+                                    SUGERE O AUMENTO NA REMUNERAÇÃO MÍNIMA DOS GUARDAS CIVIS MUNICIPAIS DE PIQUET …
+                                </p>
+
+                            </div>
+                            <div class="flex justify-end effect-zoom">   
+                                <a href="noticias_interno.html">
+                                    <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mb-2 effect-zoom">
+                                        <p class="text-white text-sm">SAIBA MAIS</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center shadow-xl p-5 rounded-xl effect-zoom hover:bg-primary-100">
+                        <div>
+                            <div class="flex justify-between">
+                                <p class="font-black text-graylight text-sm ">REQ Nº 10/2023</p>
+                                <div class="flex items-center gap-x-3">
+                                    <i class="fad fa-calendar text-primary-600"></i>
+                                    <p class="text-graylight text-sm">18/05/2021</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center mt-5">
+                                <div>
+                                    <div class="w-24 h-24 bg-primary-200 rounded-full mt-4"></div>   
+                                    <img src="img/person1.jpg" class="absolute bottom-[70px] w-24 h-24 object-cover object-center rounded-full" alt="">
+                                </div>
+                                <p class=" text-graylight ml-5 text-sm">
+                                    REQUER PROVIDÊNCIAS PARA O CUMPRIMENTO, PELO MUNICÍPIO DE PIQUET CARNEIRO, DOS PISOS …
+                                </p>
+
+                            </div>
+                            <div class="flex justify-end effect-zoom">   
+                                <a href="noticias_interno.html">
+                                    <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mb-2 effect-zoom">
+                                        <p class="text-white text-sm">SAIBA MAIS</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center shadow-xl p-5 rounded-xl effect-zoom hover:bg-primary-100">
+                        <div>
+                            <div class="flex justify-between">
+                                <p class="font-black text-graylight text-sm ">REQ Nº 10/2023</p>
+                                <div class="flex items-center gap-x-3">
+                                    <i class="fad fa-calendar text-primary-600"></i>
+                                    <p class="text-graylight text-sm">18/05/2021</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center mt-5">
+                                <div>
+                                    <div class="w-24 h-24 bg-primary-200 rounded-full mt-4"></div>   
+                                    <img src="img/person3.jpg" class="absolute bottom-[70px] w-24 h-24 object-cover object-center rounded-full" alt="">
+                                </div>
+                                <p class=" text-graylight ml-5 text-sm">
+                                    CRIA O CONSELHO MUNICIPAL DOS DIREITOS DA PESSOA COM DEFICIÊNCIA E DÁ …
+                                </p>
+
+                            </div>
+                            <div class="flex justify-end effect-zoom">   
+                                <a href="noticias_interno.html">
+                                    <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mb-2 effect-zoom">
+                                        <p class="text-white text-sm">SAIBA MAIS</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center shadow-xl p-5 rounded-xl effect-zoom hover:bg-primary-100">
+                        <div>
+                            <div class="flex justify-between">
+                                <p class="font-black text-graylight text-sm ">REQ Nº 10/2023</p>
+                                <div class="flex items-center gap-x-3">
+                                    <i class="fad fa-calendar text-primary-600"></i>
+                                    <p class="text-graylight text-sm">18/05/2021</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center mt-5">
+                                <div>
+                                    <div class="w-24 h-24 bg-primary-200 rounded-full mt-4"></div>   
+                                    <img src="img/person1.jpg" class="absolute bottom-[70px] w-24 h-24 object-cover object-top rounded-full" alt="">
+                                </div>
+                                <p class=" text-graylight text-sm ml-5">
+                                    SUPRIME O § 9º DO ART. 23, E O ART. 24 E SEU § 1º, DO TEXTO ORIGINAL DO PROJETO DE LEI Nº 003, DE 21 DE MARÇO DE …
+                                </p>
+
+                            </div>
+                            <div class="flex justify-end effect-zoom">   
+                                <a href="noticias_interno.html">
+                                    <div class="bg-secundary rounded-full w-36 flex items-center py-1.5 justify-center mb-2 effect-zoom">
+                                        <p class="text-white text-sm">SAIBA MAIS</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+                <div class="flex justify-end lg:justify-start">   
+                    <a href="noticias_interno.html">
+                        <div class="bg-primary-600 w-80 rounded-md flex items-center py-2 justify-center mt-12 mb-8 effect-zoom">
+                            <i class="fa-duotone fa-right-from-bracket text-xl mr-3 text-white"></i>
+                            <p class="text-white">VEJA TODAS AS PROPOSIÇÕES</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="flex items-center">
+                    <div class="w-1.5 h-10 bg-secundary"></div>
+                    <p class="ml-5 text-xl font-black text-secundary"> AGENDA</p>
+                </div>
+                <div class="bg-white shadow-xl py-5 px-8 rounded-xl w-full mt-16 h-[520px] flex-col items-center">
+                    <div class="flex effect-zoom">
+                        <div class="flex my-4">
+                            <div class="rounded-md border-primary-600 border text-center">
+                                <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Jun</div>
+                                <div class="text-base text-primary-600 font-black px-2.5 py-0.5">23</div>
+                            </div>
+                            <div class="ml-6 overflow-hidden cursor-pointer" data-id="{{ noticia.id }} "
+                                onclick="abrirModal(this)">
+                                <a class="text-sm md:hidden xl:hidden lg:hidden 2xl:block 2xl:text-sm text-graylight  hover:text-pink-700  transition 
+                                        ease-in-out delay-100">
+                                    <p class="text-graylight btn-header">SESSÃO ORDINÁRIA DA CÂMARA MUNICIPAL DE PIQUET CARNEIRO</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex effect-zoom">
+                        <div class="flex my-4">
+                            <div class="rounded-md border-primary-600 border text-center">
+                                <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Jun</div>
+                                <div class="text-base  text-primary-600 font-black px-2.5 py-0.5">09</div>
+                            </div>
+                            <div class="ml-6 overflow-hidden cursor-pointer" data-id="{{ noticia.id }}"
+                                onclick="abrirModal(this)">
+                                <a class="text-sm md:hidden xl:hidden lg:hidden 2xl:block 2xl:text-sm text-graylight  hover:text-pink-700  transition 
+                                        ease-in-out delay-100">
+                                    <p class="text-graylight">
+                                        SESSÃO ORDINÁRIA DA CÂMARA MUNICIPAL DE PIQUET CARNEIRO
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex effect-zoom">
+                        <div class="flex my-4">
+                            <div class="rounded-md border-primary-600 border text-center">
+                                <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Mai</div>
+                                <div class="text-base  text-primary-600 font-black px-2.5 py-0.5">26</div>
+                            </div>
+                            <div class="ml-6 overflow-hidden cursor-pointer" data-id="{{ noticia.id }}"
+                                onclick="abrirModal(this)">
+                                <a class="text-sm md:hidden xl:hidden lg:hidden 2xl:block 2xl:text-sm text-graylight  hover:text-pink-700  transition 
+                                        ease-in-out delay-100">
+                                    <p class="text-graylight btn-header">
+                                        SESSÃO ORDINÁRIA DA CÂMARA MUNICIPAL DE PIQUET CARNEIRO
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex effect-zoom">
+                        <div class="flex my-4">
+                            <div class="rounded-md border-primary-600 border text-center">
+                                <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Mai</div>
+                                <div class="text-base  text-primary-600 font-black px-2.5 py-0.5">12</div>
+                            </div>
+                            <div class="ml-6 overflow-hidden cursor-pointer" data-id="{{ noticia.id }}"
+                                onclick="abrirModal(this)">
+                                <a class="text-sm md:hidden xl:hidden lg:hidden 2xl:block 2xl:text-sm text-graylight  hover:text-pink-700  transition 
+                                        ease-in-out delay-100">
+                                    <p class="text-graylight btn-header">
+                                        SESSÃO ORDINÁRIA DA CÂMARA MUNICIPAL DE PIQUET CARNEIRO
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex effect-zoom ">
+                        <div class="flex my-4">
+                            <div class="rounded-md border-primary-600 border text-center">
+                                <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Abr</div>
+                                <div class="text-base  text-primary-600 font-black px-2.5 py-0.5">24</div>
+                            </div>
+                            <div class="ml-6 overflow-hidden cursor-pointer" data-id="{{ noticia.id }}"
+                                onclick="abrirModal(this)">
+                                <a class="text-sm md:hidden xl:hidden lg:hidden 2xl:block 2xl:text-sm text-graylight  hover:text-pink-700  transition 
+                                        ease-in-out delay-100">
+                                    <p class="text-graylight ">
+                                        SESSÃO ORDINÁRIA DA CÂMARA MUNICIPAL DE PIQUET CARNEIRO
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex effect-zoom ">
+                        <div class="flex my-4">
+                            <div class="rounded-md border-primary-600 border text-center">
+                                <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Abr</div>
+                                <div class="text-base  text-primary-600 font-black px-2.5 py-0.5">12</div>
+                            </div>
+                            <div class="ml-6 overflow-hidden cursor-pointer" data-id="{{ noticia.id }}"
+                                onclick="abrirModal(this)">
+                                <a class="text-sm md:hidden xl:hidden lg:hidden 2xl:block 2xl:text-sm text-graylight  hover:text-pink-700  transition 
+                                        ease-in-out delay-100">
+                                    <p class="text-graylight">
+                                        SESSÃO ORDINÁRIA DA CÂMARA MUNICIPAL DE PIQUET CARNEIRO
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex justify-end">
+                    <a href="noticias_interno.html">
+                        <div class="bg-primary-600 w-72 rounded-md flex items-center py-2 justify-center mt-12 mb-8 effect-zoom">
+                            <i class="fa-duotone fa-right-from-bracket text-xl mr-3 text-white"></i>
+                            <p class="text-white">VER AGENDA COMPLETA</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        
+        </div>
+        <div class="mt-20">
+            <p class="w-full h-[1200px] md:h-[780px] bg-primary-900 absolute bg-opacity-20 z-10"></p>
+            <img src="img/pexels-august-de-richelieu-4427611.jpg" alt="banner_foto_home" class="h-[1200px] md:h-[780px] banner bg-bottom brightness-50 ">
+            <nav class="tamanhos flex flex-row justify-between pt-20 pb-5">
+                <div class="flex items-center z-10">
+                    <div class="w-1.5 h-10 bg-white"></div>
+                    <p class="ml-5 text-xl font-black text-white">ACOMPANHE AS ULTIMAS MÍDIAS DA CÂMARA</p>
+                </div>
+            </nav>
+            <div>
+                <div class="grid md:grid-cols-3 mt-10 lg:mt-10 mb-10 tamanhos items-center gap-x-10 gap-y-5">
+                    <img src="img/noticia1.jpg" class="z-10 h-60 w-full object-cover rounded-xl shadow-xl" alt="">
+                    
+                    <div class="flex items-center">
+                        <img src="img/imagem1.jpg" class="z-10 h-60 w-full object-cover rounded-xl shadow-xl" alt="">
+                    
+                    </div>
+                    <img src="img/imagem2.jpg" class="z-10 h-60 w-full object-cover rounded-xl shadow-xl" alt="">
+                </div>
+                <div class="flex  tamanhos items-center gap-x-10 ">
+                    <video src="img/video_cidade.mp4" controls loop muted  class="z-10 h-60 md:h-[600px] w-full object-cover rounded-xl shadow-xl"></video>
+                
+                </div>
+            </div>
+            
+        </div>
+        <div class="flex justify-end tamanhos mt-10">   
+            <a href="noticias_interno.html">
+                <div class="bg-primary-600 w-72 rounded-md flex items-center py-2 justify-center mt-2 mb-20 effect-zoom">
+                    <i class="fa-duotone fa-right-from-bracket text-xl mr-3 text-white"></i>
+                    <p class="text-white">VER TV CÂMARA</p>
+                </div>
+            </a>
+        </div>
+        <div class="bg-primary-100 py-20">
+            <div class=" tamanhos">
+                <div class="flex items-center">
+                    <div class="w-1.5 h-10 bg-secundary"></div>
+                    <p class="ml-5 text-xl font-black text-secundary">TRANSPARÊNCIA</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 mt-10">
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia ">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-chart-pie fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">RELATÓRIO DE GESTÃO FISCAL</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-gears fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">ATOS ADMINISTRATIVOS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-coins fa-3x"></i>
+                                    </button>
+                                </div>   
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">CONTAS DA GESTÃO</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-gavel fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">LICITAÇÕES</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-handshake fa-3x"></i>
+                                    </button>
+                                </div>    
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">CONTRATOS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-calendar-day fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">DIÁRIAS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-address-card fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">DETALHAMENTO PESSOAL</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-sack-dollar fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">RECEITAS (PREV. E ARREC.)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-hand-holding-dollar fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">DESPEZAS (EMP. LIQ. E PAG.)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-scale-balanced fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">LEIS MUNICIPAIS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-truck fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">VEÍCULOS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-memo fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">PROTOCOLOS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <button class="botao-background px-6 py-7">
+                                    <i class="fa-duotone fa-cart-circle-check fa-3x"></i>
+                                </button>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">PLANO DE CONT. ANUAL (PCA)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-clipboard-list-check fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">SISTEMAS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-file-invoice-dollar fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-primary-500 mt-5 lg:mt-8">CONTRA-CHEQUE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-end tamanhos">   
+                <a href="noticias_interno.html">
+                    <div class="bg-primary-600 rounded-md w-72 flex items-center py-2 justify-center mt-20 effect-zoom">
+                        <i class="fa-duotone fa-right-from-bracket text-xl mr-3 text-white"></i>
+                        <p class="text-white">VER TODAS AS OPÇÕES</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="tamanhos mt-20 mb-10">
+            <div class="flex items-center">
+                <div class="w-1.5 h-10 bg-secundary"></div>
+                <p class="ml-5 text-xl font-bold text-secundary">AVISO DE LICITAÇÕES</p>
+            </div>
+        </div>
+
+        <div class="tamanhos relative">
+            <div class="absolute top-24 w-full">
+                <div class="flex justify-between items-center overflow-hidden">
+                    <div class="pl-4 text-primary-900 text-opacity-60 hover:text-primary-900">
+                        <button onclick="let owlPrev = $('#owl-carousel-fique-informado');
+                            owlPrev.trigger('prev.owl.carousel');">
+                            <i class="fa-solid fa-angle-left fa-4x"></i>
+                        </button>
+                    </div>
+                    <div class="pr-4 text-primary-900 text-opacity-60 hover:text-primary-900">
+                        <button onclick="let owlNext = $('#owl-carousel-fique-informado');
+                            owlNext.trigger('next.owl.carousel');">
+                            <i class="fa-solid fa-angle-right fa-4x"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="owl-carousel-fique-informado" class="owl-carousel owl-theme owl-carousel2 px-14">
+                <div class="item mx-5 shadow-xl bg-white p-4 rounded-xl">
+                    <div class="flex items-center gap-x-5 my-4">
+                        <div class="rounded-md border-primary-600 border text-center">
+                            <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Jun</div>
+                            <div class="text-base text-primary-600 font-black px-2.5 py-0.5">23</div>
+                        </div>
+                        <div class="text-graylight space-y-1">
+                            <p class="font-bold text-sm">Publicação do edital</p>
+                            <p class="text-sm">MENOR PREÇO</p>
+                            <p class="text-sm">Nº 2023.13.02.1</p>
+                        </div>
+                    </div>
+                    <p class="mb-5 text-graylight">
+                        Lorem ipsum dolor sit amet, consecte 
+                        adipiscing elit. Vestibulum ac diam sit 
+                        amet...
+                    </p>
+                    <p class="text-primary-600 font-bold">
+                        Abertura em 09 de Março de 2023 
+                        na CâmaraMunicipal de Modelo
+                    </p>
+                </div>
+                <div class="item mx-5 shadow-xl bg-white p-4 rounded-xl">
+                    <div class="flex items-center gap-x-5 my-4">
+                        <div class="rounded-md border-primary-600 border text-center">
+                            <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Jun</div>
+                            <div class="text-base text-primary-600 font-black px-2.5 py-0.5">23</div>
+                        </div>
+                        <div class="text-graylight space-y-1">
+                            <p class="font-bold text-sm">Publicação do edital</p>
+                            <p class="text-sm">MENOR PREÇO</p>
+                            <p class="text-sm">Nº 2023.13.02.1</p>
+                        </div>
+                    </div>
+                    <p class="mb-5 text-graylight">
+                        Lorem ipsum dolor sit amet, consecte 
+                        adipiscing elit. Vestibulum ac diam sit 
+                        amet...
+                    </p>
+                    <p class="text-primary-600 font-bold">
+                        Abertura em 09 de Março de 2023 
+                        na CâmaraMunicipal de Modelo
+                    </p>
+                </div>
+                <div class="item mx-5 shadow-xl bg-white p-4 rounded-xl">
+                    <div class="flex items-center gap-x-5 my-4">
+                        <div class="rounded-md border-primary-600 border text-center">
+                            <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Jun</div>
+                            <div class="text-base text-primary-600 font-black px-2.5 py-0.5">23</div>
+                        </div>
+                        <div class="text-graylight space-y-1">
+                            <p class="font-bold text-sm">Publicação do edital</p>
+                            <p class="text-sm">MENOR PREÇO</p>
+                            <p class="text-sm">Nº 2023.13.02.1</p>
+                        </div>
+                    </div>
+                    <p class="mb-5 text-graylight">
+                        Lorem ipsum dolor sit amet, consecte 
+                        adipiscing elit. Vestibulum ac diam sit 
+                        amet...
+                    </p>
+                    <p class="text-primary-600 font-bold">
+                        Abertura em 09 de Março de 2023 
+                        na CâmaraMunicipal de Modelo
+                    </p>
+                </div>
+                <div class="item mx-5 shadow-xl bg-white p-4 rounded-xl">
+                    <div class="flex items-center gap-x-5 my-4">
+                        <div class="rounded-md border-primary-600 border text-center">
+                            <div class="min-w-[41px] text-xs bg-primary-600 text-white font-bold rounded-t-sm">Jun</div>
+                            <div class="text-base text-primary-600 font-black px-2.5 py-0.5">23</div>
+                        </div>
+                        <div class="text-graylight space-y-1">
+                            <p class="font-bold text-sm">Publicação do edital</p>
+                            <p class="text-sm">MENOR PREÇO</p>
+                            <p class="text-sm">Nº 2023.13.02.1</p>
+                        </div>
+                    </div>
+                    <p class="mb-5 text-graylight">
+                        Lorem ipsum dolor sit amet, consecte 
+                        adipiscing elit. Vestibulum ac diam sit 
+                        amet...
+                    </p>
+                    <p class="text-primary-600 font-bold">
+                        Abertura em 09 de Março de 2023 
+                        na CâmaraMunicipal de Modelo
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full py-10 mt-20 bg-primary-600">
+            <div class="tamanhos">
+                <div class="flex items-center z-10">
+                    <div class="w-1.5 h-10 bg-white"></div>
+                    <p class="ml-5 text-xl font-bold text-white">ACESSO RÁPIDO</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 mt-10">
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia2">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-briefcase fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-white mt-5 lg:mt-8">ATIVIDADES LEGISLATIVAS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia2">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-memo fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-white mt-5 lg:mt-10">PROTOCOLOS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia2">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-book-bookmark fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-white mt-5 lg:mt-10">CARTA DE SERVIÇOS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia2">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-messages-question fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-white mt-5 lg:mt-8">PERGUNTAS FREQUENTES</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../pages/transparencia/covid/covid_opcoes.html">
+                        <div class="btn-transparencia2">
+                            <div class="flex lg:flex-col items-center">
+                                <div class="w-24">
+                                    <button class="botao-background px-6 py-7">
+                                        <i class="fa-duotone fa-people-line fa-3x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-center text-start lg:text-center ml-5 lg:ml-0">
+                                    <p class="text-white mt-5 lg:mt-10">PARLAMENTARES</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class=" mx-auto">
+            <iframe class="w-full h-[300px] bg-cover 2xl:mx-auto"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4335.129674355573!2d-44.01678158472675!3d-19.995863586566912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6bdd3f022a3b7%3A0x12ac5aa6cae92561!2sR.%20da%20Tarde%20-%20Barreiro%2C%20Belo%20Horizonte%20-%20MG%2C%2030644-030!5e1!3m2!1sen!2sbr!4v1669989934249!5m2!1sen!2sbr"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+<!-- beggin:Scripts -->
+    <script src="https://kit-pro.fontawesome.com/releases/v5.10.1/js/pro.min.js" data-auto-fetch-svg></script>
+    <script>
+        //Javascript to toggle the menu
+        document.getElementById('nav-toggle').onclick = function(){
+            document.getElementById("nav-content").classList.toggle("hidden");
+        }
+    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <script>
+          // Owl Carousel
+          $(function() {
+          var owl1 = $(".owl-carousel1");
+          owl1.owlCarousel({
+              autoplayTimeout: 6000,
+              autoplayHoverPause: true,
+              items: 1,
+              loop: true,
+              nav: false,
+              autoplay: true,
+              dots: false,
+              responsive: {
+                      0: {
+                          items: 1
+                      },
+                  }
+              });
+          });
+
+          $("#botao_proximo").on('click', function () {
+              owl.trigger('prev.owl.carousel');
+          });
+
+          $("#botao_anterior").on('click', function () {
+              owl.trigger('next.owl.carousel');
+          })
+
+       //Javascript to toggle the menu
+       document.getElementById('nav-toggle').onclick = function(){
+              document.getElementById("nav-content").classList.toggle("hidden");
+          }
+      </script>
+       <script>
+        // Owl Carousel
+        $(function() {
+        var owl2 = $(".owl-carousel2");
+        owl2.owlCarousel({
+            autoplayTimeout: 6000,
+            autoplayHoverPause: true,
+            items: 3,
+            loop: true,
+            nav: false,
+            autoplay: true,
+            dots: false,
+            responsive: {
+                    0: {
+                        items: 1
+                    },
+                    1200: {
+                        items: 3
+                    }
+                }
+            });
+        });
+
+        $("#botao_proximo").on('click', function () {
+            owl.trigger('prev.owl.carousel');
+        });
+
+        $("#botao_anterior").on('click', function () {
+            owl.trigger('next.owl.carousel');
+        })
+
+
+    </script>
+<!-- end:Scripts -->
+</body>
+</html>
